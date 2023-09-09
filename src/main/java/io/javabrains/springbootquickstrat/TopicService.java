@@ -1,7 +1,6 @@
 package io.javabrains.springbootquickstrat;
 
 import org.springframework.stereotype.Service;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,10 +12,15 @@ public class TopicService {
                 new Topic("java","Core Java","Core Java Description"),
                 new Topic("javascript","Javascript","Javascript Description")
     );
+
     public List<Topic> getAllTopics() {
         return topics;
     }
     public Topic getTopic(String id) {
         return topics.stream().filter(topic -> topic.getId().equals(id)).findFirst().get();
+    }
+
+    public void addtopic(Topic topic) {
+        topics.add(topic);
     }
 }
